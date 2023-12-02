@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ranking>
+<configs>
+<atualstudio>Cache script by Atualstudio.com</atualstudio>
+<updated>1700829795</updated>
+<delay>3</delay>
+<rcount>50</rcount>
+</configs>
+<line>
+<pos>1</pos>
+<name>TESTT</name>
+<leader>Testing</leader>
+<members>1</members>
+<ally>-</ally>
+<level>11</level>
+<reputation>0</reputation>
+</line>
+<line>
+<pos>2</pos>
+<name>Staff</name>
+<leader>DevLyon</leader>
+<members>1</members>
+<ally>-</ally>
+<level>1</level>
+<reputation>0</reputation>
+</line>
+</ranking>

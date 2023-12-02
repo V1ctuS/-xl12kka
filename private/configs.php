@@ -16,9 +16,9 @@ $server_url = 'www.L2Dandiarena.com'; // Introduzca exactamente la URL donde se 
 $conMethod = 2; // 1 = MySQL, 2 = MySQLi, 3 = PDO-MySQL
 
 $host = 'localhost'; // Host
-$dbnm = 'l2jdb'; // DB nombre
+$dbnm = 'l2babyema'; // DB nombre
 $user = 'root'; // Usuario
-$pass = 'root'; // Contrasena
+$pass = ''; // Contrasena
 
 
 ###########################################################

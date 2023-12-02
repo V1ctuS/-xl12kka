@@ -62,7 +62,7 @@ if($genNew) {
 			}
 			
 			$line .= "\n<line>\n";
-			$line .= "<name>".$query[$i]['name']."</name>\n";
+			$line .= "<name>".$query[$i]['nombre']."</name>\n";
 			$line .= "<level>".$query[$i]['level']."</level>\n";
 			$line .= "<status>".$status."</status>\n";
 			$line .= "<respawn>".$respawn."</respawn>\n";
@@ -172,7 +172,7 @@ if($genNew) {
 			}
 			
 			$line .= "\n<line>\n";
-			$line .= "<name>".$query[$i]['name']."</name>\n";
+			$line .= "<name>".$query[$i]['nombre']."</name>\n";
 			$line .= "<level>".$query[$i]['level']."</level>\n";
 			$line .= "<status>".$status."</status>\n";
 			$line .= "<respawn>".$respawn."</respawn>\n";

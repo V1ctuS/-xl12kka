@@ -4,14 +4,14 @@ class Donate {
 	
 	public static function listChars($acc) {
 		
-		$sql = DB::Executa("SELECT char_name, obj_Id FROM characters WHERE account_name = '".$acc."' LIMIT 7");
+		$sql = DB::Executa("SELECT char_name, charId FROM characters WHERE account_name = '".$acc."' LIMIT 7");
 		return $sql;
 		
 	}
 	
 	public static function findChar($acc, $personagem) {
 		
-		$sql = DB::Executa("SELECT char_name, obj_Id, online FROM characters WHERE account_name = '".$acc."' AND obj_Id = '".$personagem."' LIMIT 1");
+		$sql = DB::Executa("SELECT char_name, charId, online FROM characters WHERE account_name = '".$acc."' AND charId = '".$personagem."' LIMIT 1");
 		return $sql;
 		
 	}
@@ -25,21 +25,21 @@ class Donate {
 	
 	public static function findDonation($acc, $protocolo='') {
 		
-		$sql = DB::Executa("SELECT D.*, C.char_name FROM site_donations AS D LEFT JOIN characters AS C ON C.obj_Id = D.personagem WHERE D.account = '".$acc."' ".(!empty($protocolo) ? "AND D.protocolo = '".$protocolo."'" : "")." AND D.status <> '2' ORDER BY D.data DESC");
+		$sql = DB::Executa("SELECT D.*, C.char_name FROM site_donations AS D LEFT JOIN characters AS C ON C.charId = D.personagem WHERE D.account = '".$acc."' ".(!empty($protocolo) ? "AND D.protocolo = '".$protocolo."'" : "")." AND D.status <> '2' ORDER BY D.data DESC");
 		return $sql;
 		
 	}
 	
 	public static function listConverts($acc) {
 		
-		$sql = DB::Executa("SELECT T.*, C.char_name FROM site_log_convertcoins AS T INNER JOIN characters AS C ON C.obj_Id = T.destinatario WHERE T.account = '".$acc."' ORDER BY T.cdata DESC");
+		$sql = DB::Executa("SELECT T.*, C.char_name FROM site_log_convertcoins AS T INNER JOIN characters AS C ON C.charId = T.destinatario WHERE T.account = '".$acc."' ORDER BY T.cdata DESC");
 		return $sql;
 		
 	}
 	
 	public static function listTransfers($acc) {
 		
-		$sql = DB::Executa("SELECT T.*, C.char_name FROM site_log_transfercoins AS T INNER JOIN characters AS C ON C.obj_Id = T.destinatario_char WHERE T.remetente = '".$acc."' ORDER BY T.tdata DESC");
+		$sql = DB::Executa("SELECT T.*, C.char_name FROM site_log_transfercoins AS T INNER JOIN characters AS C ON C.charId = T.destinatario_char WHERE T.remetente = '".$acc."' ORDER BY T.tdata DESC");
 		return $sql;
 		
 	}
@@ -53,7 +53,7 @@ class Donate {
 	
 	public static function findReceptor($dest) {
 		
-		$sql = DB::Executa("SELECT account_name, online, obj_Id FROM characters WHERE char_name = '".$dest."' LIMIT 1");
+		$sql = DB::Executa("SELECT account_name, online, charId FROM characters WHERE char_name = '".$dest."' LIMIT 1");
 		return $sql;
 		
 	}
@@ -178,7 +178,7 @@ class Donate {
 	
 	public static function listConvertsOnline($acc) {
 		
-		$sql = DB::Executa("SELECT T.*, C.char_name FROM site_log_convertcoins_online AS T INNER JOIN characters AS C ON C.obj_Id = T.personagem WHERE T.account = '".$acc."' ORDER BY T.cdata DESC");
+		$sql = DB::Executa("SELECT T.*, C.char_name FROM site_log_convertcoins_online AS T INNER JOIN characters AS C ON C.charId = T.personagem WHERE T.account = '".$acc."' ORDER BY T.cdata DESC");
 		return $sql;
 		
 	}

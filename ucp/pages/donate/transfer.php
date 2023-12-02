@@ -46,7 +46,7 @@ $captchaKey = md5(uniqid());
 						if(count($listChars) > 0) {
 							echo "<option value='0' selected>".$LANG[12008]."</option>";
 							for($i=0, $c=count($listChars); $i < $c; $i++) {
-								echo "<option value='".$listChars[$i]['obj_Id']."'>".$listChars[$i]['char_name']."</option>";
+								echo "<option value='".$listChars[$i]['charId']."'>".$listChars[$i]['char_name']."</option>";
 							}
 						} else { echo "<option value='0'>".$LANG[12100]."</option>"; }
 						?>
@@ -99,7 +99,7 @@ $captchaKey = md5(uniqid());
 							if(count($listChars) > 0) {
 								echo "<option value='0' selected>".$LANG[12008]."</option>";
 								for($i=0, $c=count($listChars); $i < $c; $i++) {
-									echo "<option value='".$listChars[$i]['obj_Id']."'>".$listChars[$i]['char_name']."</option>";
+									echo "<option value='".$listChars[$i]['charId']."'>".$listChars[$i]['char_name']."</option>";
 								}
 							} else { echo "<option value='0'>".$LANG[12100]."</option>"; }
 							?>

@@ -48,7 +48,7 @@ $insertBalance = Donate::insertBalance($receptor, $count);
 if(!$insertBalance) {
 	fim($LANG[12055]);
 } else {
-	@Donate::transferLog($count, $_SESSION['acc'], $receptor, $findReceptor[0]['obj_Id']);
+	@Donate::transferLog($count, $_SESSION['acc'], $receptor, $findReceptor[0]['charId']);
 	fim($LANG[12056], 'OK', './?module=donate&page=transfer');
 }
 

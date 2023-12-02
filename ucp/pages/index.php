@@ -87,7 +87,7 @@ if(!empty($accData[0]['created_time']) && !is_numeric($accData[0]['created_time'
 			if(count($findChars) > 0) {
 				for($i=0, $c=count($findChars); $i < $c; $i++) {
 					echo "
-					<div".($i == 0 ? " class='actived'" : "")." data-id='".$findChars[$i]['obj_Id']."'>
+					<div".($i == 0 ? " class='actived'" : "")." data-id='".$findChars[$i]['charId']."'>
 						<img src='imgs/avatar/".genAvatar($findChars[$i]['base_class'], $findChars[$i]['sex'])."' />
 						<div>".$findChars[$i]['char_name']."</div>
 					</div>
@@ -142,7 +142,7 @@ if(!empty($accData[0]['created_time']) && !is_numeric($accData[0]['created_time'
 				}
 				
 				echo "
-				<div class='infos".($i == 0 ? " actived" : "")."' data-id='".$findChars[$i]['obj_Id']."'>
+				<div class='infos".($i == 0 ? " actived" : "")."' data-id='".$findChars[$i]['charId']."'>
 					<div class='lines'>
 						<div>".$LANG[12013]."<span>".trim($findChars[$i]['char_name'])."</span></div>
 						<div class='two'>".$LANG[39047]."<span>".(!empty($findChars[$i]['title']) ? trim($findChars[$i]['title']) : "-")."</span></div>

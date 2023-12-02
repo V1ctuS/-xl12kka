@@ -26,7 +26,7 @@ class Account {
 	public static function Register($login, $pass, $accLvl, $email) {
 		
 		$pass = base64_encode(pack('H*', sha1($pass)));
-		$sql = DB::Executa("INSERT INTO accounts (login, password, access_level, email, created_time) VALUES ('".$login."', '".$pass."', '".$accLvl."', '".$email."', '".time()."')");
+		$sql = DB::Executa("INSERT INTO accounts (login, password, accessLevel, email, created_time) VALUES ('".$login."', '".$pass."', '".$accLvl."', '".$email."', '".time()."')");
 		return $sql;
 		
 	}
@@ -89,7 +89,7 @@ class Account {
 			}
 			$accs = substr($accs, 0, -2);
 			
-			$sql = DB::Executa("DELETE FROM accounts WHERE login IN (".$accs.") AND access_level < 0 AND (lastactive IS NULL OR lastactive = '')");
+			$sql = DB::Executa("DELETE FROM accounts WHERE login IN (".$accs.") AND accessLevel < 0 AND (lastactive IS NULL OR lastactive = '')");
 			if(!$sql) { return false; }
 			
 		}
@@ -114,7 +114,7 @@ class Account {
 	
 	public static function updateAccessLevel($access, $login) {
 		
-		$sql = DB::Executa("UPDATE accounts SET access_level = '".$access."' WHERE login = '".$login."' LIMIT 1");
+		$sql = DB::Executa("UPDATE accounts SET accessLevel = '".$access."' WHERE login = '".$login."' LIMIT 1");
 		return $sql;
 		
 	}

@@ -30,7 +30,7 @@ if($logged != 1) { fim('', 'ERROR', './'); }
 						$chars = Account::listChars($_SESSION['acc']);
 						if(count($chars) > 0) {
 							for($i=0; $i < count($chars); $i++) {
-								echo "<option value='".$chars[$i]['obj_Id']."'>".$chars[$i]['char_name']."</option>";
+								echo "<option value='".$chars[$i]['charId']."'>".$chars[$i]['char_name']."</option>";
 							}
 						} else {
 							echo "<option value='0'>".$LANG[12100]."</option>";

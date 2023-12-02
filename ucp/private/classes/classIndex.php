@@ -31,11 +31,11 @@ class Index {
 		LEFT JOIN
 			clan_data AS CLAN ON CLAN.clan_id = C.clanid
 		LEFT JOIN
-			character_subclasses AS S1 ON S1.char_obj_id = C.obj_Id AND S1.class_index = '1'
+			character_subclasses AS S1 ON S1.char_charId = C.charId AND S1.class_index = '1'
 		LEFT JOIN
-			character_subclasses AS S2 ON S2.char_obj_id = C.obj_Id AND S2.class_index = '2'
+			character_subclasses AS S2 ON S2.char_charId = C.charId AND S2.class_index = '2'
 		LEFT JOIN
-			character_subclasses AS S3 ON S3.char_obj_id = C.obj_Id AND S3.class_index = '3'
+			character_subclasses AS S3 ON S3.char_charId = C.charId AND S3.class_index = '3'
 		WHERE
 			C.account_name = '".$login."'
 		LIMIT 7");
